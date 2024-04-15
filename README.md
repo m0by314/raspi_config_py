@@ -1,4 +1,6 @@
-# Tool to configure a Raspberry Pi
+# Raspi_config_py
+Tool to configure a Raspberry Pi with Ansible 
+
 ## -  Build 
 Run the script `build.py`
 
