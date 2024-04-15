@@ -1,0 +1,24 @@
+---
+- name: Active Firewall.
+  ufw:
+    state: enabled
+    policy: deny
+  when: rasp_firewall
+
+- name: Open ssh port.
+  ufw:
+    rule: allow
+    port: '{{ rasp_ssh_port }}'
+  when: rasp_firewall
+
+- name: Open port defined by user.
+  ufw:
+    rule: allow
+    port: '{{ item }}'
+  with_items: "{{ rasp_open_firewall_port }}"
+  when: rasp_firewall and rasp_open_firewall_port
+
+- name: Disable Firewall.
+  ufw:
+    state: disabled
+  when: not rasp_firewall

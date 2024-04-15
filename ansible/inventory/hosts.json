@@ -1,0 +1,1 @@
+{"pi": {"hosts": {"raspberry": {"ansible_host": "raspberry", "ansible_port": 22, "ansible_user": "pi"}}}}

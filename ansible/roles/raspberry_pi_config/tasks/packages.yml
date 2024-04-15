@@ -1,0 +1,17 @@
+---
+- name: Update cache.
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Install mandatory packages.  # They are defined in vars/main.yml
+  apt:
+    name: "{{ rasp_mandatory_packages }}"
+    state: present
+  when: rasp_mandatory_packages
+
+- name: Install Extra packages.
+  apt:
+    name: "{{ rasp_extra_packages }}"
+    state: present
+  when: rasp_extra_packages
