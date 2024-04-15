@@ -1,1 +1,7 @@
 /raspi_config_py.spec
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/rasp_config_py.iml
+/dist/
+/build/
