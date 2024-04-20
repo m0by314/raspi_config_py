@@ -4,7 +4,7 @@ import subprocess
 
 subprocess.call(
     "python -m PyInstaller main.py "
-    "--name raspi_config_py "
+    "--name raspi_config "
     "--add-data ansible/:ansible/ "
     "--collect-all ansible  "
     "--collect-all ansible_runner "
@@ -16,14 +16,14 @@ subprocess.call(
     stdin=subprocess.PIPE,
 )
 
-if os.path.isfile(os.getcwd()+'/dist/raspi_config_py/_internal/ansible/inventory/hosts.json'):
+if os.path.isfile(os.getcwd()+'/dist/raspi_config/_internal/ansible/inventory/hosts.json'):
     os.symlink(
-        os.getcwd()+'/dist/raspi_config_py/_internal/ansible/inventory/hosts.json',
-        os.getcwd() + '/dist/raspi_config_py/hosts.json'
+        os.getcwd()+'/dist/raspi_config/_internal/ansible/inventory/hosts.json',
+        os.getcwd() + '/dist/raspi_config/hosts.json'
     )
 
-if os.path.isfile(os.getcwd()+'/dist/raspi_config_py/_internal/ansible/playbooks/raspi_config_playbook.yml'):
+if os.path.isfile(os.getcwd()+'/dist/raspi_config/_internal/ansible/playbooks/raspi_config_playbook.yml'):
     os.symlink(
-        os.getcwd()+'/dist/raspi_config_py/_internal/ansible/playbooks/raspi_config_playbook.yml',
-        os.getcwd() + '/dist/raspi_config_py/raspi_config_playbook.yml'
+        os.getcwd()+'/dist/raspi_config/_internal/ansible/playbooks/raspi_config_playbook.yml',
+        os.getcwd() + '/dist/raspi_config/raspi_config_playbook.yml'
     )
