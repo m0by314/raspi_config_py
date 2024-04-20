@@ -62,7 +62,7 @@ Example Playbook
       - 8080
 
   roles:
-    - roles/raspberry_pi_config
+    - raspberry_pi_config
 ```
 
 License

@@ -2,9 +2,14 @@
 Tool to configure a Raspberry Pi with Ansible 
 
 ## -  Build 
-Run the script `build.py`
+
+On Mac it is necessary to install the SSL certificate : `/Applications/Python\ 3.11/Install\ Certificates.command ; exit;`
+
+Run the script `build.py`, the output application is located in the `dist/` folder
 
 ## - Usage
+sur Mac installer les certificat ssl
+/Applications/Python\ 3.11/Install\ Certificates.command ; exit;
 ### It is necessary to build the image with [Raspberry Pi Imager](https://www.raspberrypi.org/downloads/) to customize the OS:
 - #### General menu:
     * Hostname
@@ -27,7 +32,7 @@ Run the script `build.py`
 - "ansible_user": "pi"
 
 ### Configure the raspi_config_playbook.yml file
-[Variable details](ansible/roles/raspberry_pi_config/README.md)
+[Variable details](ansible/playbooks/roles/raspberry_pi_config/README.md)
 
 ```
 ---
@@ -45,7 +50,7 @@ Run the script `build.py`
       - 80
       - 8080
   roles:
-    - ansible/roles/raspberry_pi_config
+    - raspberry_pi_config
 
 ```
 
