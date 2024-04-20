@@ -1,23 +1,19 @@
 import os
+
 import ansible_runner
 
 from pathlib import Path
 
+workdir = str(os.path.dirname(Path(__file__).resolve()))
 
-"""
-sur Mac installer les certificat ssl
-/Applications/Python\ 3.11/Install\ Certificates.command ; exit;
-"""
+os.environ["PATH"] += os.pathsep + workdir + "/bin"  # Add bin path for compiled application
 
 if __name__ == '__main__':
     ret = ansible_runner.run(
-        inventory=Path(os.getcwd(), "hosts.json").as_posix(),
-        playbook=Path(os.getcwd(), 'raspi_config_playbook.yml').as_posix()
+        inventory=Path(workdir, "ansible/inventory/hosts.json").as_posix(),
+        playbook=Path(workdir, 'ansible/playbooks/raspi_config_playbook.yml').as_posix()
     )
 
     print("{}: {}".format(ret.status, ret.rc))
-
     print("'Final' status:")
     print(ret.stats)
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

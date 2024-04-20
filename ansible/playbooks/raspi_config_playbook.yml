@@ -15,6 +15,6 @@
       - 8080
 
   roles:
-    - ansible/roles/raspberry_pi_config
+    - raspberry_pi_config
 
 
