@@ -7,6 +7,8 @@ On Mac it is necessary to install the SSL certificate : `/Applications/Python\ 3
 
 Run the script `build.py`, the output application is located in the `dist/` folder
 
+## - Prerequisites 
+
 ### It is necessary to build the image with [Raspberry Pi Imager](https://www.raspberrypi.org/downloads/) to customize the OS:
 - #### General menu:
     * Hostname
@@ -21,7 +23,9 @@ Run the script `build.py`, the output application is located in the `dist/` fold
 
 ![image](static/img/menu_service.png)
 
-#### Tip: Find the IP address of the pi and run an ssh cmd, this will add the pi to the authorized host and allow you to resolve the name
+#### Tip: Find the IP address of the pi and run an ssh cmd, this will add the pi to the authorized host and allow you to resolve the name  
+
+## - Usage
 
 ###  Configure the host file if necessary, default value:  
 - "ansible_host": "raspberrypi"
@@ -50,6 +54,7 @@ Run the script `build.py`, the output application is located in the `dist/` fold
     - raspberry_pi_config
 
 ```
+
 
 
 
