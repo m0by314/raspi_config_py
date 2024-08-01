@@ -16,14 +16,17 @@ subprocess.call(
     stdin=subprocess.PIPE,
 )
 
-if os.path.isfile(os.getcwd()+'/dist/raspi_config/_internal/ansible/inventory/hosts.json'):
+build_path = os.getcwd()+'/dist/raspi_config/'
+os.chdir(build_path)
+
+if os.path.isfile('_internal/ansible/inventory/hosts.json'):
     os.symlink(
-        os.getcwd()+'/dist/raspi_config/_internal/ansible/inventory/hosts.json',
-        os.getcwd() + '/dist/raspi_config/hosts.json'
+        '_internal/ansible/inventory/hosts.json',
+        'hosts.json'
     )
 
-if os.path.isfile(os.getcwd()+'/dist/raspi_config/_internal/ansible/playbooks/raspi_config_playbook.yml'):
+if os.path.isfile('_internal/ansible/playbooks/raspi_config_playbook.yml'):
     os.symlink(
-        os.getcwd()+'/dist/raspi_config/_internal/ansible/playbooks/raspi_config_playbook.yml',
-        os.getcwd() + '/dist/raspi_config/raspi_config_playbook.yml'
+        '_internal/ansible/playbooks/raspi_config_playbook.yml',
+        'raspi_config_playbook.yml'
     )
