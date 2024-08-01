@@ -7,9 +7,6 @@ On Mac it is necessary to install the SSL certificate : `/Applications/Python\ 3
 
 Run the script `build.py`, the output application is located in the `dist/` folder
 
-## - Usage
-sur Mac installer les certificat ssl
-/Applications/Python\ 3.11/Install\ Certificates.command ; exit;
 ### It is necessary to build the image with [Raspberry Pi Imager](https://www.raspberrypi.org/downloads/) to customize the OS:
 - #### General menu:
     * Hostname
